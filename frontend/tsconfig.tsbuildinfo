@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/main.tsx","./src/physics.ts","./src/types.ts","./src/usepolling.ts","./src/components/alertdrawer.tsx","./src/components/alertfeed.tsx","./src/components/machinecard.tsx","./src/components/markdown.tsx","./src/components/sensorpanel.tsx"],"version":"5.9.3"}

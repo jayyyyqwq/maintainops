@@ -1,0 +1,58 @@
+# MaintainOps — single source of configuration.
+# Everything the CDK app, deploy scripts and Lambdas need lives here.
+
+project: maintainops
+region: ap-south-1
+
+# Email for SNS alerts and the AWS Budgets alarm. Leave empty to skip subscriptions.
+# Personal values can go in config.local.yaml (gitignored), which overrides this file.
+alert_email: ""
+monthly_budget_usd: 5
+
+bedrock:
+  # Must be invokable ON_DEMAND in `region` (no cross-Region inference profile) and supported by
+  # Knowledge Base RetrieveAndGenerate. Anthropic models also need a payment method (AWS Marketplace).
+  # Check with: aws bedrock list-foundation-models --by-output-modality TEXT
+  llm_model_id: meta.llama3-70b-instruct-v1:0
+  embedding_model_id: amazon.titan-embed-text-v2:0
+  embedding_dimension: 1024
+  retrieval_results: 5
+
+sagemaker:
+  xgboost_version: "1.7-1"
+  training_instance_type: ml.m5.large
+  use_spot_training: true
+  transform_instance_type: ml.m5.large
+  serverless_memory_mb: 2048
+  serverless_max_concurrency: 2
+  hyperparameters:
+    objective: multi:softprob
+    num_class: 5
+    max_depth: 5
+    eta: 0.1
+    num_round: 400
+    subsample: 0.9
+    colsample_bytree: 0.9
+    min_child_weight: 1
+    early_stopping_rounds: 30
+    eval_metric: mlogloss
+
+# Quality gate: the pipeline fails (and the endpoint is not updated) below these.
+quality_gate:
+  min_pr_auc: 0.70
+  min_recall: 0.70
+  min_precision: 0.60
+
+web:
+  # cloudfront: S3 + CloudFront (needs an account verified for CloudFront)
+  # api:        served by a Lambda behind the HTTP API (works on any account)
+  hosting: api
+
+runtime:
+  machines: 6
+  risk_threshold: 0.5
+  alert_cooldown_seconds: 600
+  reading_ttl_days: 7
+  schedule_rate_minutes: 1
+  api_rate_limit_rps: 2
+  api_burst_limit: 5

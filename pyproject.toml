@@ -1,0 +1,21 @@
+[project]
+name = "maintainops"
+version = "0.1.0"
+description = "Serverless predictive maintenance on AWS: SageMaker XGBoost + Bedrock RAG"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["cdk.out", "frontend", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["common", "stacks", "settings", "api", "simulator", "diagnosis", "inference", "pipeline", "webapp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["lambdas", "infra", "."]

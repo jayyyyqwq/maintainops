@@ -1,0 +1,102 @@
+{
+  "threshold": 0.5,
+  "n_test": 1500,
+  "failure_rate": 0.034,
+  "binary": {
+    "tp": 44,
+    "fp": 8,
+    "fn": 7,
+    "tn": 1441,
+    "precision": 0.8462,
+    "recall": 0.8627,
+    "f1": 0.8544
+  },
+  "pr_auc": 0.9302,
+  "accuracy": 0.99,
+  "per_class": {
+    "NONE": {
+      "precision": 0.9952,
+      "recall": 0.9945,
+      "f1": 0.9948,
+      "support": 1449
+    },
+    "TWF": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 7
+    },
+    "HDF": {
+      "precision": 0.7619,
+      "recall": 1.0,
+      "f1": 0.8649,
+      "support": 16
+    },
+    "PWF": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 15
+    },
+    "OSF": {
+      "precision": 0.9286,
+      "recall": 1.0,
+      "f1": 0.963,
+      "support": 13
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "NONE",
+      "TWF",
+      "HDF",
+      "PWF",
+      "OSF"
+    ],
+    "matrix": [
+      [
+        1441,
+        2,
+        5,
+        0,
+        1
+      ],
+      [
+        7,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        16,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        15,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        13
+      ]
+    ]
+  },
+  "source": "sagemaker",
+  "run_id": "train-20260925-201134",
+  "quality_gate": {
+    "min_pr_auc": 0.7,
+    "min_recall": 0.7,
+    "min_precision": 0.6,
+    "passed": true
+  }
+}

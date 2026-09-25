@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# CDK
+cdk.out/
+infra/cdk.out/
+cdk.context.json
+
+# Frontend
+node_modules/
+frontend/dist/
+
+# Local artifacts
+.env
+*.zip
+scratch/
+.DS_Store
+
+# Local tooling
+.claude/
+plan.md
+cdk-outputs.json
+.schedule.json
+config.local.yaml
+docs/INTERVIEW_PREP.md
+*.jpeg

@@ -1,0 +1,11 @@
+# Local training, tests and linting (never shipped to Lambda)
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+xgboost>=2.1
+matplotlib>=3.9
+pyyaml>=6.0
+boto3>=1.35
+pytest>=8.3
+ruff>=0.6
+-r infra/requirements.txt

@@ -1,0 +1,115 @@
+{
+  "threshold": 0.5,
+  "n_test": 1500,
+  "failure_rate": 0.034,
+  "binary": {
+    "tp": 44,
+    "fp": 9,
+    "fn": 7,
+    "tn": 1440,
+    "precision": 0.8302,
+    "recall": 0.8627,
+    "f1": 0.8462
+  },
+  "pr_auc": 0.9185,
+  "accuracy": 0.9893,
+  "per_class": {
+    "NONE": {
+      "precision": 0.9952,
+      "recall": 0.9938,
+      "f1": 0.9945,
+      "support": 1449
+    },
+    "TWF": {
+      "precision": 0.25,
+      "recall": 0.1429,
+      "f1": 0.1818,
+      "support": 7
+    },
+    "HDF": {
+      "precision": 0.7619,
+      "recall": 1.0,
+      "f1": 0.8649,
+      "support": 16
+    },
+    "PWF": {
+      "precision": 1.0,
+      "recall": 0.9333,
+      "f1": 0.9655,
+      "support": 15
+    },
+    "OSF": {
+      "precision": 0.9286,
+      "recall": 1.0,
+      "f1": 0.963,
+      "support": 13
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "NONE",
+      "TWF",
+      "HDF",
+      "PWF",
+      "OSF"
+    ],
+    "matrix": [
+      [
+        1440,
+        3,
+        5,
+        0,
+        1
+      ],
+      [
+        6,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        16,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        14,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        13
+      ]
+    ]
+  },
+  "source": "local",
+  "best_iteration": 171,
+  "rows": {
+    "train": 6993,
+    "validation": 1498,
+    "test": 1500,
+    "dropped": 9
+  },
+  "feature_importance": {
+    "temp_diff_k": 0.2134000062942505,
+    "strain_nm_min": 0.19189999997615814,
+    "power_w": 0.15880000591278076,
+    "torque_nm": 0.14010000228881836,
+    "tool_wear_min": 0.12960000336170197,
+    "rpm": 0.12200000137090683,
+    "quality_m": 0.013100000098347664,
+    "air_temp_k": 0.01140000019222498,
+    "process_temp_k": 0.009399999864399433,
+    "quality_l": 0.005400000140070915,
+    "quality_h": 0.004900000058114529
+  }
+}
