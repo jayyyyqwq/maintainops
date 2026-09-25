@@ -31,9 +31,11 @@ It deploys with one command, retrains through a gated Step Functions pipeline, a
 
 ![Live telemetry for one machine: failure risk spikes crossing the 50% threshold during injected faults, with process-air temperature difference, power, torque, speed and tool wear](docs/images/telemetry.jpg)
 
-A real alert from the live deployment: a PWF fault was injected on machine M5, and Llama 3 70B returned this in 5 s, grounded in `03-power-failure.md` and `08-sensor-reference.md`:
+A real alert from the live deployment. A power fault was injected on machine M5; the model scored it at 100% PWF, and Llama 3 70B returned a diagnosis in 5 s, grounded in the power-failure manual and the sensor reference sheet:
 
-> The likely cause of the predicted power failure (PWF) is over-power (above 9,000 W). The readings support this diagnosis because the mechanical power (10,512 W) is above the safe range of 3,500 W to 9,000 W, and the torque (71.7 Nm) is high at moderate speed (1,400 rpm). To fix this safely, press **Feed Hold** immediately (PWF-MAN Section 4.1). Then, check the CNC program for a feed rate or depth of cut set too high, and adjust it accordingly. Also, inspect the tool for bluntness and replace it if necessary…
+| AI diagnosis | Cited manual sections |
+|---|---|
+| <img src="docs/images/diagnosis.jpg" alt="Alert drawer: M5 power failure, 100% risk, grounded AI diagnosis citing PWF-MAN Section 4.1" width="460"> | <img src="docs/images/sources.jpg" alt="Sources retrieved from the Knowledge Base: two chunks of 03-power-failure.md and one of 08-sensor-reference.md" width="460"> |
 
 ---
 
