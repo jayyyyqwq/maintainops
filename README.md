@@ -291,7 +291,6 @@ tests/               pytest suite
 ## Acknowledgements
 
 - Dataset: S. Matzka, "Explainable Artificial Intelligence for Predictive Maintenance Applications", 2020. [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset), CC BY 4.0.
-- Inspired by [aws-samples/sample-predictive-maintenance](https://github.com/aws-samples/sample-predictive-maintenance). This is an independent implementation with a different architecture: serverless inference, a gated Step Functions pipeline, Bedrock RAG on S3 Vectors, and a live dashboard with fault injection.
 
 ## License
 
